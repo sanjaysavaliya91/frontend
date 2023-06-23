@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Example of Simple Intrest</h1>
+    <hr/>
+    <script>
+        function si(p,r,t)
+        {
+            let temp = (p*r*t)/100
+
+            return temp;
+        }
+
+        var message1 = "Enter Principal Amount";
+        var message2 = "Enter Intrest Rate % per Year";
+        var message3 = "Enter Time in Year";
+        var defaultvalue = 1;
+        var num1 = prompt(message1,defaultvalue);
+        var num2 = prompt(message2,defaultvalue);
+        var num3 = prompt(message3,defaultvalue);
+        num1 = parseInt(num1);
+        num2 = parseInt(num2);
+        num3 = parseInt(num3);
+        var simpleIntrest = si(num1,num2,num3);
+        document.write("Simple Intrest =",simpleIntrest);
+    </script>
+</body>
+</html>
