@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dynamic Table </h1> <hr/>
+
+    <table border="1" cellpadding="15" bgcolor="red" width="100%" align="center">
+        <tr>
+            <td>
+                <input type="number" id="rows" placeholder="Enter Rows" onblur="makeTable();" required />
+                <input type="number"  id="columns" placeholder="Enter Columns" onblur="makeTable();" required />
+            </td>
+        </tr>
+        <tr>
+            <table bgcolor="yellow" width="100%" cellpadding="10" border="1" id="output">
+            </table>
+        </tr>
+    </table>
+
+    <script>
+        function makeTable()
+        {
+            let rows = document.getElementById("rows");
+            let columns = document.getElementById("columns");
+            let output = document.getElementById("output");
+            let temp = "";
+            let totalrow = parseInt(rows.value);
+            let totalcolumn = parseInt(columns.value);
+
+
+            for(let i =1 ; i<=totalrow; i++)
+            {
+                temp+= "<tr>";
+
+                for(let c = 1; c<=totalcolumn; c++)
+                {
+                    temp+= `<td>${c}</td>`; 
+                }
+                temp+= "</td>";
+            }
+            
+
+            output.innerHTML = temp;
+        }
+    </script>
+</body>
+</html>

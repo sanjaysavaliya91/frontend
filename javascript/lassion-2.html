@@ -8,9 +8,76 @@
 <body>
     <h1>Example of convert given minutes into hours and minute</h1>
     <hr/>
+    <table border="2" width="35%" align="center" cellpadding="10">
+        <tr>
+            <td align="center">
+                <input type="number" id="totalminute" placeholder="Enter Minutes" onblur="givenMinutes();">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="output-1">Hourse</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="output-2">Minutes</div>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <input type="button" id="reset" value="Reset" onclick="reset();"> 
+            </td>
+        </tr>
+    </table>
+   <script>
+    var totalMinutes = document.getElementById('totalminute');
+    var hourse = document.getElementById('output-1');
+    var minutes = document.getElementById('output-2');
+    var time = parseInt(totalMinutes.value);
+
+    function givenMinutes(){
+        let tamp = time / 60;
+    hourse.innerHTML =tamp;
+    let map = time % 60;
+    minutes.innerHTML =map;
+
+    }
     
-    <script>
-        
-    </script>
+
+        function reset(){
+            hourse = '';
+            minutes = '';
+        }
+   
+    
+
+
+
+
+
+
+   </script>
+    <!-- <script>
+        function convertHourse(t)
+        {
+            let temp = time/60;      
+            return temp;
+        }
+      
+        function convertMinutes(d)
+        {
+            let mat = time % 60;      
+            return mat;
+        }
+        var message1 = "Enter Total Minutes";
+        var defaultvalue = 1;
+        var time = prompt(message1,defaultvalue);
+        time = parseInt(time);
+        var hourse = convertHourse(time);
+        var minutes = convertMinutes(time);
+        document.write("Hourse = ",hourse);
+        document.write("Minutes = ",minutes);
+    </script> -->
 </body>
 </html>

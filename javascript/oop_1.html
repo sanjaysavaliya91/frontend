@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card</title>
+    <!-- 
+        CDN (Content Delivery Network)
+     -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <div class="card">
+                    <div class="card-header">Enter Player Details</div>
+                    <div class="card-body">
+                       <form action="" method="post" id="myform">
+                        <div class="mb-3">
+                            <label for="playerName" class="form-label">Player Name</label>
+                            <input type="text" name="" class="form-control" id="playerName" placeholder="Enter Name" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="match" class="form-label">Player Match</label>
+                            <input type="number" name="" class="form-control" id="match" placeholder="Enter Match" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="runs" class="form-label">Player Runs</label>
+                            <input type="number" name="" class="form-control" id="runs" placeholder="Enter Runs" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="total50s" class="form-label">Player 50s</label>
+                            <input type="number" name="" class="form-control" id="total50s" placeholder="Enter 50s" required />
+                        </div>
+                        <div class="mb-3">
+                            <label for="total100s" class="form-label">Player 100s</label>
+                            <input type="number" name="" class="form-control" id="total100s" placeholder="Enter 100s" required />
+                        </div>
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-primary" >Add Player's Detail</button>
+                        </div>
+                       </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10">
+               <div class="row" id="output">          
+               </div>               
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    
+    <script>
+        var submit = document.getElementById('submit');
+        var myform = document.getElementById('myform');
+        var playerName = document.getElementById('playerName');
+        var playerMatch = document.getElementById('match');
+        var playerRuns = document.getElementById('runs');
+        var player50s = document.getElementById('total50s');
+        var player100s = document.getElementById('total100s');
+//create templet
+        var players = new object({
+            name:'' ,
+            match: '',
+            runs: '',
+            player50s: '',
+            player100s: '',
+
+            Add: function(){
+                let div = `<div class="card col-md-4 bg-warning m-3"><div class="card-body"><b>Name : ${this.name}</b> <br />Match : ${this.match}<br />Runs : ${this.runs}<br />Total 50s : ${this,player50s}<br />Total 100s : ${this,player100s}<br /><div class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></div><div class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i></div></div></div>` 
+                output.innerHTML += div;  
+            }
+
+        })
+         myform.onsubmit = function(){
+            var p1 = players;
+            p1.name = playerName.value;
+            p1.match = playerMatch.value;
+            p1.runs = playerRuns.value;
+            p1.player50s = player50s.value;
+            p1.player100s = player100s.value;
+            p1.Add();
+            return false;
+        } 
+    </script>
+  
+</body>
+
+</html>
