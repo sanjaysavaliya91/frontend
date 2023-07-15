@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ES6 spread operation</h1>
+    <hr/>
+    <b>use console to check output</b>
+    <script>
+        var list1 = ['red','green','blue'];
+        var list2 = ['brown','black','pink'];
+        console.log(list1);
+        console.log(list2);
+        var list3 = [...list1,...list2];
+        console.log(list3);
+
+        var oldObject = {
+            name: "Ankit Patel",
+            address: "Leela udan",
+            city: "bhanvagar",
+        };
+        var newObject = {
+            address: "Iscon Mega City",
+            email: "ankit3385@gmail.com"
+        };
+        console.log(oldObject);
+        console.log(newObject);
+
+        var UpdatedObject = {...oldObject,...newObject};
+        console.log(UpdatedObject);
+    </script>
+</body>
+</html>

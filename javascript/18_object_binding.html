@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Object Binding</h1>
+    <hr>
+    <h2 id="output"></h2>
+
+    <script>
+        var output = document.getElementById('output');
+        class Student
+        {
+            constructor(rollno,name,age)
+            {
+                this.rollno = rollno;
+                this.name = name;
+                this.age = age;
+            }
+            display()
+            {
+                output.innerHTML = `RollNo = ${this.rollno} <br/> Name = ${this.name} <br/> Age = ${this.age}`;
+            }
+        }
+        var s1 = new Student(100,'Devdut bhoj',22);
+        // s1.display();
+        var display = s1.display.bind(s1); //create alias for the s1.display function 
+        display();
+    </script>
+</body>
+</html>
