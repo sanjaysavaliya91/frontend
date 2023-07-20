@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h1 align="center"> Ipl point tablre using array</h1><hr>
+    <table border="2" align="center" cellpadding="10">
+        <thead>
+            <tr bgcolor="red">
+                <th>Sr.No.</th>
+                <th>name</th>
+                <th>p</th>
+                <th>w</th>
+                <th>l</th>
+                <th>nr</th>
+                <th>nrr</th>
+                <th>pts</th>
+            </tr>
+        </thead>
+        <tbody id="output">
+
+        </tbody>
+    </table>
+   <script>
+     var teams = [
+    {
+        "name" :"GT",
+        "p" : "14",
+        "w" : "10",
+        "l" : "4",
+        "nr" : "0",
+        "nrr" : "0.809",
+        "pts" : "20",
+    },
+    {
+        "name" :"CSK",
+        "p" : "14",
+        "w" : "8",
+        "l" : "5",
+        "nr" : "1",
+        "nrr" : "0.652",
+        "pts" : "17",
+    },
+    {
+        "name" :"LSG",
+        "p" : "14",
+        "w" : "8",
+        "l" : "5",
+        "nr" : "1",
+        "nrr" : "0.284",
+        "pts" : "17",
+    },
+    {
+        "name" :"MI",
+        "p" : "14",
+        "w" : "8",
+        "l" : "6",
+        "nr" : "0",
+        "nrr" : "-0.044",
+        "pts" : "16",
+    },
+    {
+        "name" :"RR",
+        "p" : "14",
+        "w" : "7",
+        "l" : "7",
+        "nr" : "0",
+        "nrr" : "0.148",
+        "pts" : "14",
+    },
+    {
+        "name" :"RCB",
+        "p" : "14",
+        "w" : "7",
+        "l" : "7",
+        "nr" : "0",
+        "nrr" : "0.135",
+        "pts" : "14",
+    },
+    {
+        "name" :"KKR",
+        "p" : "14",
+        "w" : "6",
+        "l" : "8",
+        "nr" : "0",
+        "nrr" : "-0.239",
+        "pts" : "12",
+    },
+    {
+        "name" :"PBKS",
+        "p" : "14",
+        "w" : "6",
+        "l" : "8",
+        "nr" : "0",
+        "nrr" : "-0.304",
+        "pts" : "12",
+    },
+    {
+        "name" :"DC",
+        "p" : "14",
+        "w" : "5",
+        "l" : "9",
+        "nr" : "0",
+        "nrr" : "-0.808",
+        "pts" : "10",
+    },
+    {
+        "name" :"SRH",
+        "p" : "14",
+        "w" : "4",
+        "l" : "10",
+        "nr" : "0",
+        "nrr" : "-0.590",
+        "pts" : "8",
+    }
+    ]
+
+    var output = document.getElementById('output');
+teams.map(function(team, index){
+    output.innerHTML += `<tr bgcolor="yellow"><td>${index + 1}</td><td>${team.name}</td><td>${team.p}</td><td>${team.w}</td><td>${team.l}</td><td>${team.nr}</td><td>${team.nrr}</td><td>${team.pts}</td></tr>`;
+    
+    });
+
+   </script>
+</body>
+</html>
